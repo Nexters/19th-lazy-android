@@ -38,10 +38,13 @@ android {
     hilt {
         enableTransformForLocalTests = true
     }
+
+    viewBinding { enabled = true }
+
 }
 
 dependencies {
-
+    implementation project(path: ':bubblepicker')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
