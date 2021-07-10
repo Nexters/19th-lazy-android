@@ -1,2 +1,5 @@
 rootProject.name = "Lazy"
 include ':app'
+include ':presentation'
+include ':domain'
+include ':data'

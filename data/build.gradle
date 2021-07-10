@@ -1,0 +1,27 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
+
+    // Dagger hilt
+    implementation "com.google.dagger:hilt-android:$dagger_hilt_android_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_hilt_android_version"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$gson_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+
+    implementation project(path: ':domain')
+}

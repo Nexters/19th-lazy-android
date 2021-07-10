@@ -10,6 +10,10 @@ buildscript {
         material_version = '1.4.0'
         constraint_layout_version = '2.0.4'
         recyclerview_version = '1.2.1'
+        kotlin_coroutine_version = '1.5.1'
+        retrofit_version = '2.9.0'
+        gson_version = '2.5.0'
+        okhttp_version = '3.12.0'
     }
     repositories {
         google()
