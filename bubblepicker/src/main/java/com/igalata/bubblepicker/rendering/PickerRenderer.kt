@@ -29,12 +29,10 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     var maxSelectedCount: Int? = null
         set(value) {
             Engine.maxSelectedCount = value
-            field = value
         }
     var bubbleSize = 50
         set(value) {
             Engine.radius = value
-            field = value
         }
     var listener: BubblePickerListener? = null
     lateinit var items: ArrayList<PickerItem>
@@ -79,8 +77,10 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     private fun initialize() {
         clear()
         Engine.centerImmediately = centerImmediately
+        Log.d("tag1","$scaleX $scaleY")
         Engine.build(items.size, scaleX, scaleY).forEachIndexed { index, body ->
-            Log.d("tag1-- ","${body.position.x}  ${body.position.y}")
+            Log.d("tag1","${body.position.x} ${body.position.y}")
+
             circles.add(Item(items[index], body))
         }
         items.forEach { if (it.isSelected) Engine.resize(circles.first { circle -> circle.pickerItem == it }) }
@@ -111,8 +111,9 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
         val radius = body.radius
         val radiusX = radius * scaleX
         val radiusY = radius * scaleY
-
+//        Log.d("tag1", "$scaleX $scaleY ")
         body.initialPosition.apply {
+//            Log.d("tag1","${x - radiusX},${x + radiusX} / ${y - radiusY} ${y + radiusY}")
             vertices?.put(8 * index, floatArrayOf(x - radiusX, y + radiusY, x - radiusX, y - radiusY,
                     x + radiusX, y + radiusY, x + radiusX, y - radiusY))
         }
@@ -172,5 +173,4 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
         circles.clear()
         Engine.clear()
     }
-
 }

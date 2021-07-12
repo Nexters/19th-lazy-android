@@ -3,9 +3,9 @@ package com.igalata.bubblepicker.rendering
 import android.content.Context
 import android.graphics.PixelFormat
 import android.opengl.GLSurfaceView
-import androidx.annotation.ColorInt
 import android.util.AttributeSet
 import android.view.MotionEvent
+import androidx.annotation.ColorInt
 import com.igalata.bubblepicker.BubblePickerListener
 import com.igalata.bubblepicker.R
 import com.igalata.bubblepicker.adapter.BubblePickerAdapter
@@ -17,7 +17,8 @@ import com.igalata.bubblepicker.model.PickerItem
  */
 class BubblePicker : GLSurfaceView {
 
-    @ColorInt var background: Int = 0
+    @ColorInt
+    var background: Int = 0
         set(value) {
             field = value
             renderer.backgroundColor = Color(value)
@@ -40,19 +41,16 @@ class BubblePicker : GLSurfaceView {
     var maxSelectedCount: Int? = null
         set(value) {
             renderer.maxSelectedCount = value
-            field = value
         }
     var listener: BubblePickerListener? = null
         set(value) {
             renderer.listener = value
-            field = value
         }
     var bubbleSize = 50
         set(value) {
             if (value in 1..100) {
                 renderer.bubbleSize = value
             }
-            field = value
         }
     val selectedItems: List<PickerItem?>
         get() = renderer.selectedItems
@@ -80,38 +78,38 @@ class BubblePicker : GLSurfaceView {
         attrs?.let { retrieveAttrubutes(attrs) }
     }
 
-//    override fun onTouchEvent(event: MotionEvent): Boolean {
-//        when (event.action) {
-//            MotionEvent.ACTION_DOWN -> {
-//                startX = event.x
-//                startY = event.y
-//                previousX = event.x
-//                previousY = event.y
-//            }
-//            MotionEvent.ACTION_UP -> {
-//                if (isClick(event)) renderer.resize(event.x, event.y)
-//                renderer.release()
-//            }
-//            MotionEvent.ACTION_MOVE -> {
-//                if (isSwipe(event)) {
-//                    renderer.swipe(previousX - event.x, previousY - event.y)
-//                    previousX = event.x
-//                    previousY = event.y
-//                } else {
-//                    release()
-//                }
-//            }
-//            else -> release()
-//        }
-//
-//        return true
-//    }
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                startX = event.x
+                startY = event.y
+                previousX = event.x
+                previousY = event.y
+            }
+            MotionEvent.ACTION_UP -> {
+                if (isClick(event)) renderer.resize(event.x, event.y)
+                renderer.release()
+            }
+            MotionEvent.ACTION_MOVE -> {
+                if (isSwipe(event)) {
+                    renderer.swipe(previousX - event.x, previousY - event.y)
+                    previousX = event.x
+                    previousY = event.y
+                } else {
+                    release()
+                }
+            }
+            else -> release()
+        }
 
-//    private fun release() = postDelayed({ renderer.release() }, 0)
-//
-//    private fun isClick(event: MotionEvent) = Math.abs(event.x - startX) < 20 && Math.abs(event.y - startY) < 20
-//
-//    private fun isSwipe(event: MotionEvent) = Math.abs(event.x - previousX) > 20 && Math.abs(event.y - previousY) > 20
+        return true
+    }
+
+    private fun release() = postDelayed({ renderer.release() }, 0)
+
+    private fun isClick(event: MotionEvent) = Math.abs(event.x - startX) < 20 && Math.abs(event.y - startY) < 20
+
+    private fun isSwipe(event: MotionEvent) = Math.abs(event.x - previousX) > 20 && Math.abs(event.y - previousY) > 20
 
     private fun retrieveAttrubutes(attrs: AttributeSet) {
         val array = context.obtainStyledAttributes(attrs, R.styleable.BubblePicker)

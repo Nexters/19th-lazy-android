@@ -9,6 +9,7 @@ import com.igalata.bubblepicker.model.BubbleGradient
 import com.igalata.bubblepicker.model.PickerItem
 import com.nexters.lazy.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityMainBinding
@@ -28,15 +29,15 @@ class MainActivity : AppCompatActivity() {
             override fun getItem(position: Int): PickerItem {
                 return PickerItem().apply {
                     title = titles[position]
-                    gradient = BubbleGradient(
-                        colors.getColor((position * 2) % 8, 0),
-                        colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL
-                    )
+                        BubbleGradient(
+                            colors.getColor(position * 2 % 8, 0),
+                            colors.getColor(position * 2 % 8 + 1, 0), BubbleGradient.VERTICAL
+                        )
                     textColor = ContextCompat.getColor(this@MainActivity, android.R.color.white)
                 }
             }
         }
-        viewBinding.picker.bubbleSize = 10
+        viewBinding.picker.bubbleSize = 8
         viewBinding.picker.centerImmediately = false
 
         colors.recycle()

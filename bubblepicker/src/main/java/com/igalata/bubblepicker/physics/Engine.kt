@@ -19,14 +19,14 @@ object Engine {
         set(value) {
             field = value
             bubbleRadius = interpolate(0.1f, 0.25f, value / 100f)
-            gravity = interpolate(20f, 80f, value / 100f)
+            gravity = interpolate(20f, 80f, value*1.5f)
             standardIncreasedGravity = interpolate(500f, 800f, value / 100f)
         }
     var centerImmediately = false
     private var standardIncreasedGravity = interpolate(500f, 800f, 0.5f)
     private var bubbleRadius = 0.17f
 
-    private val world = World(Vec2(0f, 0f), false)
+    private val world = World(Vec2(0f, -1f), false)
     private val step = 0.0005f
     private val bodies: ArrayList<CircleBody> = ArrayList()
     private var borders: ArrayList<Border> = ArrayList()
@@ -36,7 +36,7 @@ object Engine {
     private var touch = false
     private var gravity = 6f
     private var increasedGravity = 55f
-    private var gravityCenter = Vec2(0f, 0f)
+    private var gravityCenter = Vec2(0f, -1f)
     private val currentGravity: Float
         get() = if (touch) increasedGravity else gravity
     private val toBeResized = ArrayList<Item>()
@@ -47,12 +47,20 @@ object Engine {
     fun build(bodiesCount: Int, scaleX: Float, scaleY: Float): List<CircleBody> {
         val density = interpolate(0.8f, 0.2f, radius / 100f)
         for (i in 0..bodiesCount - 1) {
-            val x = if(Random().nextBoolean())0.5f else -2.2f
-            val y =
-                if (Random().nextBoolean()) 1f else 0.8f
-
-//                if (Random().nextBoolean()) -0.5f / scaleY else 0.5f / scaleY
-            bodies.add(CircleBody(world, Vec2(x, y), bubbleRadius * scaleX, (bubbleRadius * scaleX) * 1.3f, density))
+            val x =
+                kotlin.random.Random.nextDouble(-1.0, 1.0)* (if (Random().nextBoolean()) -1 else 1)
+            val y = (0.9 + kotlin.random.Random.nextDouble(0.0, 0.1)) / scaleY
+//                if (Random().nextBoolean()) 0.8f / scaleY else 0.9f / scaleY
+            Log.d("tag1 !!!", "x $x y $y")
+            bodies.add(
+                CircleBody(
+                    world,
+                    Vec2(x.toFloat(), y.toFloat()),
+                    bubbleRadius * scaleX,
+                    (bubbleRadius * scaleX) * 1.3f,
+                    density
+                )
+            )
         }
         this.scaleX = scaleX
         this.scaleY = scaleY
@@ -106,14 +114,15 @@ object Engine {
 
     private fun createBorders() {
         borders = arrayListOf(
-                Border(world, Vec2(0f, 0.5f / scaleY), Border.HORIZONTAL),
-                Border(world, Vec2(0f, -0.5f / scaleY), Border.HORIZONTAL)
+            Border(world, Vec2(0f, 0.5f / scaleY), Border.HORIZONTAL),
+            Border(world, Vec2(0f, -0.5f / scaleY), Border.HORIZONTAL)
         )
     }
 
     private fun move(body: CircleBody) {
         body.physicalBody.apply {
             body.isVisible = centerImmediately.not()
+            Log.d("tag1", "position $position")
             val direction = gravityCenter.sub(position)
             val distance = direction.length()
             val gravity = if (body.increased) 1.3f * currentGravity else currentGravity
