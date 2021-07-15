@@ -15,14 +15,6 @@
 
     <integer-array name="colors">
         <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
     </integer-array>
 
 </resources>

@@ -111,9 +111,7 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
         val radius = body.radius
         val radiusX = radius * scaleX
         val radiusY = radius * scaleY
-//        Log.d("tag1", "$scaleX $scaleY ")
         body.initialPosition.apply {
-//            Log.d("tag1","${x - radiusX},${x + radiusX} / ${y - radiusY} ${y + radiusY}")
             vertices?.put(8 * index, floatArrayOf(x - radiusX, y + radiusY, x - radiusX, y - radiusY,
                     x + radiusX, y + radiusY, x + radiusX, y - radiusY))
         }

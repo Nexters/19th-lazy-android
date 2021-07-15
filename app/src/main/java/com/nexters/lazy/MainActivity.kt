@@ -20,36 +20,41 @@ class MainActivity : AppCompatActivity() {
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        val titles = resources.getStringArray(R.array.countries)
-        val colors = resources.obtainTypedArray(R.array.colors)
-
         viewBinding.picker.adapter = object : BubblePickerAdapter {
-            override val totalCount = titles.size
+            override val totalCount = 12
 
             override fun getItem(position: Int): PickerItem {
                 return PickerItem().apply {
-                    title = titles[position]
-                        BubbleGradient(
-                            colors.getColor(position * 2 % 8, 0),
-                            colors.getColor(position * 2 % 8 + 1, 0), BubbleGradient.VERTICAL
-                        )
-                    textColor = ContextCompat.getColor(this@MainActivity, android.R.color.white)
+//                    title = titles[position]
+                    gradient = when(position%3){
+                        0->
+                            BubbleGradient(
+                                getColor(R.color.teal_200),
+                                getColor(R.color.teal_200), BubbleGradient.VERTICAL
+                            )
+                        1->
+                            BubbleGradient(
+                                getColor(R.color.purple_200),
+                                getColor(R.color.purple_500), BubbleGradient.VERTICAL
+                            )
+                        2->
+                            BubbleGradient(
+                                getColor(R.color.red_200),
+                                getColor(R.color.red_500), BubbleGradient.VERTICAL
+                            )
+                        else->
+                            BubbleGradient(
+                                getColor(R.color.blue_200),
+                                getColor(R.color.blue_500), BubbleGradient.VERTICAL
+                            )
+                    }
                 }
             }
         }
         viewBinding.picker.bubbleSize = 8
         viewBinding.picker.centerImmediately = false
 
-        colors.recycle()
-
-        viewBinding.picker.listener = object : BubblePickerListener {
-            override fun onBubbleSelected(item: PickerItem) {
-
-            }
-
-            override fun onBubbleDeselected(item: PickerItem) {
-            }
-        }
+        viewBinding.picker.listener = null
     }
 
 

@@ -126,6 +126,10 @@ object Engine {
             val direction = gravityCenter.sub(position)
             val distance = direction.length()
             val gravity = if (body.increased) 1.3f * currentGravity else currentGravity
+            Log.d("tag1","gravity :$gravity")
+
+            Log.d("tag1","distance :$distance step $step")
+
             if (distance > step * 200) {
                 applyForce(direction.mul(gravity / distance.sqr()), position)
             }
