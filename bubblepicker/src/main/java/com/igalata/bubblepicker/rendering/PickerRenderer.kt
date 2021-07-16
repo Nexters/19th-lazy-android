@@ -44,6 +44,7 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
             Engine.centerImmediately = value
         }
 
+
     private var programId = 0
     private var verticesBuffer: FloatBuffer? = null
     private var uvBuffer: FloatBuffer? = null

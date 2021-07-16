@@ -55,6 +55,10 @@ class MainActivity : AppCompatActivity() {
         viewBinding.picker.centerImmediately = false
 
         viewBinding.picker.listener = null
+
+        viewBinding.textView.setOnClickListener {
+
+        }
     }
 
 

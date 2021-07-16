@@ -50,8 +50,6 @@ object Engine {
             val x =
                 kotlin.random.Random.nextDouble(-1.0, 1.0)* (if (Random().nextBoolean()) -1 else 1)
             val y = (0.9 + kotlin.random.Random.nextDouble(0.0, 0.1)) / scaleY
-//                if (Random().nextBoolean()) 0.8f / scaleY else 0.9f / scaleY
-            Log.d("tag1 !!!", "x $x y $y")
             bodies.add(
                 CircleBody(
                     world,
@@ -122,14 +120,9 @@ object Engine {
     private fun move(body: CircleBody) {
         body.physicalBody.apply {
             body.isVisible = centerImmediately.not()
-            Log.d("tag1", "position $position")
             val direction = gravityCenter.sub(position)
             val distance = direction.length()
             val gravity = if (body.increased) 1.3f * currentGravity else currentGravity
-            Log.d("tag1","gravity :$gravity")
-
-            Log.d("tag1","distance :$distance step $step")
-
             if (distance > step * 200) {
                 applyForce(direction.mul(gravity / distance.sqr()), position)
             }

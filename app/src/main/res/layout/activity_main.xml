@@ -11,10 +11,28 @@
     </data>
 
 
-    <com.igalata.bubblepicker.rendering.BubblePicker
-        android:id="@+id/picker"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:backgroundColor="@android:color/white" />
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="disppear"
+            android:padding="10dp"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.igalata.bubblepicker.rendering.BubblePicker
+            android:id="@+id/picker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:backgroundColor="@android:color/white" />
+
+
+    </LinearLayout>
+
+
 
 </layout>
