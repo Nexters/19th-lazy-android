@@ -41,31 +41,24 @@ class BubblePicker : GLSurfaceView {
     var maxSelectedCount: Int? = null
         set(value) {
             renderer.maxSelectedCount = value
+            field = value
         }
+
     var listener: BubblePickerListener? = null
         set(value) {
             renderer.listener = value
+            field = value
         }
+
     var bubbleSize = 50
         set(value) {
             if (value in 1..100) {
                 renderer.bubbleSize = value
             }
-        }
-    val selectedItems: List<PickerItem?>
-        get() = renderer.selectedItems
-
-    var centerImmediately = false
-        set(value) {
             field = value
-            renderer.centerImmediately = value
         }
 
     private val renderer = PickerRenderer(this)
-    private var startX = 0f
-    private var startY = 0f
-    private var previousX = 0f
-    private var previousY = 0f
 
     constructor(context: Context?) : this(context, null)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
@@ -77,39 +70,6 @@ class BubblePicker : GLSurfaceView {
         renderMode = RENDERMODE_CONTINUOUSLY
         attrs?.let { retrieveAttrubutes(attrs) }
     }
-
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                startX = event.x
-                startY = event.y
-                previousX = event.x
-                previousY = event.y
-            }
-            MotionEvent.ACTION_UP -> {
-                if (isClick(event)) renderer.resize(event.x, event.y)
-                renderer.release()
-            }
-            MotionEvent.ACTION_MOVE -> {
-                if (isSwipe(event)) {
-                    renderer.swipe(previousX - event.x, previousY - event.y)
-                    previousX = event.x
-                    previousY = event.y
-                } else {
-                    release()
-                }
-            }
-            else -> release()
-        }
-
-        return true
-    }
-
-    private fun release() = postDelayed({ renderer.release() }, 0)
-
-    private fun isClick(event: MotionEvent) = Math.abs(event.x - startX) < 20 && Math.abs(event.y - startY) < 20
-
-    private fun isSwipe(event: MotionEvent) = Math.abs(event.x - previousX) > 20 && Math.abs(event.y - previousY) > 20
 
     private fun retrieveAttrubutes(attrs: AttributeSet) {
         val array = context.obtainStyledAttributes(attrs, R.styleable.BubblePicker)
@@ -127,5 +87,4 @@ class BubblePicker : GLSurfaceView {
     fun clear(){
         postDelayed({ renderer.initialize() }, 0)
     }
-
 }

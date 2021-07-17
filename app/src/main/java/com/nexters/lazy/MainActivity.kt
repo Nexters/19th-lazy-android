@@ -52,14 +52,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         viewBinding.picker.bubbleSize = 8
-        viewBinding.picker.centerImmediately = false
 
         viewBinding.picker.listener = null
 
         viewBinding.textView.setOnClickListener {
-//            viewBinding.picker.adapter.totalCount = 8
             viewBinding.picker.bubbleSize = 8
-            viewBinding.picker.centerImmediately = false
 
             viewBinding.picker.listener = null
 
