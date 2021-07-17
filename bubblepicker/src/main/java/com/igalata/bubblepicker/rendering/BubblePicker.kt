@@ -34,7 +34,6 @@ class BubblePicker : GLSurfaceView {
         set(value) {
             field = value
             if (value != null) {
-//                renderer.items.clear()
                 renderer.items = ArrayList((0..value.totalCount - 1)
                         .map { value.getItem(it) }.toList())
             }
@@ -122,8 +121,11 @@ class BubblePicker : GLSurfaceView {
         if (array.hasValue(R.styleable.BubblePicker_backgroundColor)) {
             background = array.getColor(R.styleable.BubblePicker_backgroundColor, -1)
         }
-
         array.recycle()
+    }
+
+    fun clear(){
+        postDelayed({ renderer.initialize() }, 0)
     }
 
 }

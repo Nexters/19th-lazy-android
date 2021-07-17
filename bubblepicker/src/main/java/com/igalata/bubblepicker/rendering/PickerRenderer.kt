@@ -59,12 +59,14 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     private val circles = ArrayList<Item>()
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
+        Log.d("tag1","tag1 onSurfaceCreated")
         glClearColor(backgroundColor?.red ?: 1f, backgroundColor?.green ?: 1f,
                 backgroundColor?.blue ?: 1f, backgroundColor?.alpha ?: 1f)
         enableTransparency()
     }
 
     override fun onSurfaceChanged(gl: GL10?, width: Int, height: Int) {
+        Log.d("tag1","tag1 onSurfaceChanged")
         glViewport(0, 0, width, height)
         initialize()
     }
@@ -75,13 +77,11 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
         drawFrame()
     }
 
-    private fun initialize() {
+    fun initialize() {
         clear()
         Engine.centerImmediately = centerImmediately
-        Log.d("tag1","$scaleX $scaleY")
+        Log.d("tag1","itemCount ${items.size}")
         Engine.build(items.size, scaleX, scaleY).forEachIndexed { index, body ->
-            Log.d("tag1","${body.position.x} ${body.position.y}")
-
             circles.add(Item(items[index], body))
         }
         items.forEach { if (it.isSelected) Engine.resize(circles.first { circle -> circle.pickerItem == it }) }

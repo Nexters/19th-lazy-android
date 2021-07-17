@@ -20,7 +20,7 @@ object Engine {
             field = value
             bubbleRadius = interpolate(0.1f, 0.25f, value / 100f)
             gravity = interpolate(20f, 80f, value*1.5f)
-            standardIncreasedGravity = interpolate(500f, 800f, value / 100f)
+            standardIncreasedGravity = interpolate(500f, 800f, value*1.5f / 100f)
         }
     var centerImmediately = false
     private var standardIncreasedGravity = interpolate(500f, 800f, 0.5f)
@@ -45,8 +45,10 @@ object Engine {
     private var stepsCount = 0
 
     fun build(bodiesCount: Int, scaleX: Float, scaleY: Float): List<CircleBody> {
+        Log.d("tag1","build $bodiesCount $scaleX $scaleY")
+
         val density = interpolate(0.8f, 0.2f, radius / 100f)
-        for (i in 0..bodiesCount - 1) {
+        for (i in 0 until bodiesCount) {
             val x =
                 kotlin.random.Random.nextDouble(-1.0, 1.0)* (if (Random().nextBoolean()) -1 else 1)
             val y = (0.9 + kotlin.random.Random.nextDouble(0.0, 0.1)) / scaleY
@@ -63,7 +65,6 @@ object Engine {
         this.scaleX = scaleX
         this.scaleY = scaleY
         createBorders()
-
         return bodies
     }
 
@@ -79,23 +80,27 @@ object Engine {
     }
 
     fun swipe(x: Float, y: Float) {
-        if (Math.abs(gravityCenter.x) < 2) gravityCenter.x += -x
-        if (Math.abs(gravityCenter.y) < 0.5f / scaleY) gravityCenter.y += y
-        increasedGravity = standardIncreasedGravity * Math.abs(x * 13) * Math.abs(y * 13)
-        touch = true
+//        if (Math.abs(gravityCenter.x) < 2) gravityCenter.x += -x
+//        if (Math.abs(gravityCenter.y) < 0.5f / scaleY) gravityCenter.y += y
+//        increasedGravity = standardIncreasedGravity * Math.abs(x * 13) * Math.abs(y * 13)
+//        touch = true
     }
 
     fun release() {
-        gravityCenter.setZero()
-        touch = false
-        increasedGravity = standardIncreasedGravity
+//        gravityCenter.setZero()
+//        touch = false
+//        increasedGravity = standardIncreasedGravity
     }
 
     fun clear() {
-        borders.forEach { world.destroyBody(it.itemBody) }
-        bodies.forEach { world.destroyBody(it.physicalBody) }
+        borders.forEach { if(world.isLocked) world.destroyBody(it.itemBody) }
+        bodies.forEach { if(world.isLocked)world.destroyBody(it.physicalBody) }
         borders.clear()
         bodies.clear()
+//        borders.forEach { world.destroyBody(it.itemBody) }
+//        bodies.forEach { world.destroyBody(it.physicalBody) }
+//        borders.clear()
+//        bodies.clear()
     }
 
     fun resize(item: Item): Boolean {
@@ -122,7 +127,10 @@ object Engine {
             body.isVisible = centerImmediately.not()
             val direction = gravityCenter.sub(position)
             val distance = direction.length()
-            val gravity = if (body.increased) 1.3f * currentGravity else currentGravity
+//            Log.d("tag1","distance $distance")
+//            val gravity = if (body.increased) 1.3f * currentGravity else currentGravity
+            val gravity = 400
+//            Log.d("tag1","gravity $gravity")
             if (distance > step * 200) {
                 applyForce(direction.mul(gravity / distance.sqr()), position)
             }
