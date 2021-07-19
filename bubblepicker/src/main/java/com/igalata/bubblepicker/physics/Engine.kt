@@ -23,7 +23,7 @@ object Engine {
     private var scaleY = 0f
     private var gravity = 6f
     private var gravityCenter = Vec2(0f, -1f)
-    private const val currentGravity: Float = 400f
+    private const val currentGravity: Float = 350f
 
     fun build(bodiesCount: Int, scaleX: Float, scaleY: Float): List<CircleBody> {
         val density = interpolate(0.8f, 0.2f, radius / 100f)

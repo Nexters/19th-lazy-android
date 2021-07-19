@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun getItem(position: Int): PickerItem {
                 return PickerItem().apply {
-//                    title = titles[position]
                     gradient = when(position%3){
                         0->
                             BubbleGradient(
@@ -53,19 +52,12 @@ class MainActivity : AppCompatActivity() {
         }
         viewBinding.picker.bubbleSize = 8
 
-        viewBinding.picker.listener = null
-
         viewBinding.textView.setOnClickListener {
-            viewBinding.picker.bubbleSize = 8
-
-            viewBinding.picker.listener = null
 
             viewBinding.picker.adapter = object : BubblePickerAdapter {
                 override val totalCount = 15
-
                 override fun getItem(position: Int): PickerItem {
                     return PickerItem().apply {
-//                    title = titles[position]
                         gradient = when(position%2){
                             0->
                                 BubbleGradient(

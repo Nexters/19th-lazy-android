@@ -46,9 +46,7 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     private var textureIds: IntArray? = null
 
     private val scaleX: Float
-        get() = 1f
-
-    //            if (glView.width < glView.height) glView.height.toFloat() / glView.width.toFloat() else 1f
+        get() = if (glView.width < glView.height) glView.height.toFloat() / glView.width.toFloat() else 1f
     private val scaleX2: Float
         get() = if (glView.width < glView.height) glView.height.toFloat() / glView.width.toFloat() else 1f
 
