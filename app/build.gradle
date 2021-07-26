@@ -57,8 +57,14 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
     // Dagger hilt
-    implementation "com.google.dagger:hilt-android:$dagger_hilt_android_version"
-    kapt "com.google.dagger:hilt-android-compiler:$dagger_hilt_android_version"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    kapt "com.google.dagger:hilt-android-compiler:2.37"
+    implementation "com.google.dagger:hilt-android:2.37"
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+
 
     //timber
     implementation "com.jakewharton.timber:timber:4.7.1"
