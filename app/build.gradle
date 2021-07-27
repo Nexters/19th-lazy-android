@@ -1,8 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'dagger.hilt.android.plugin'
+
+
+repositories {
+    maven {
+        url "https://maven.google.com"
+    }
+    maven { url "https://jitpack.io" }
+    google()
+}
+
 
 android {
     compileSdkVersion 30
@@ -15,6 +25,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+                arguments += ["foo": "bar"]
+
+            }
+        }
     }
 
     buildTypes {
@@ -41,6 +59,13 @@ android {
 
     viewBinding { enabled = true }
 
+    kapt {
+        javacOptions {
+            option("-Adagger.fastInit=ENABLED")
+            option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+        }
+    }
+
 }
 
 dependencies {
@@ -57,13 +82,16 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
     // Dagger hilt
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
+    //hilt
     kapt "com.google.dagger:hilt-android-compiler:2.37"
     implementation "com.google.dagger:hilt-android:2.37"
-    kapt 'androidx.hilt:hilt-compiler:1.0.0'
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    annotationProcessor "com.google.dagger:hilt-android-compiler:2.37"
+
+    // Hilt Jetpack Integrations
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+    implementation 'androidx.hilt:hilt-compiler:1.0.0'
 
 
     //timber
