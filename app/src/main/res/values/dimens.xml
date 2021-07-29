@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- font size -->
+    <dimen name="extra_small">12sp</dimen>
+    <dimen name="super_small">14sp</dimen>
+    <dimen name="small">16sp</dimen>
+    <dimen name="normal">18sp</dimen>
+    <dimen name="large">24sp</dimen>
+    <dimen name="super_large">28sp</dimen>
+    <dimen name="extra_large">52dp</dimen>
+    
     <dimen name="btn_radius">30dp</dimen>
 </resources>
