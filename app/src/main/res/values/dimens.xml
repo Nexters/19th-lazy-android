@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <dimen name="tab_size">60dp</dimen>
+=======
+    <dimen name="btn_radius">30dp</dimen>
+>>>>>>> develop
 </resources>

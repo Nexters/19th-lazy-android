@@ -16,9 +16,10 @@
     <color name="red_500">#f44336</color>
     <color name="red_700">#d32f2f</color>
 
-    <color name="solid">#5044ff</color>
-    
+    <color name="key">#5044ff</color>
     <color name="text_primary">#191f28</color>
-    <color name="text_secondary">#797E86</color>
-    <color name="text_caption">#A1A7Af</color>
+    <color name="text_secondary">#797e86</color>
+    <color name="text_caption">#a1a7af</color>
+    <color name="text_white">#ffffff</color>
+    <color name="btn_disable">#cccccc</color>
 </resources>
