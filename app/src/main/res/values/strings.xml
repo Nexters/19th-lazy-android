@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Lazy</string>
+    <string name="habit_adding">습관 추가하기</string>
+    <string name="habit_input_name">습관 설정</string>
+    <string name="habit_input_name_hint">습관을 써주세요.</string>
+    <string name="habit_input_week">요일 설정</string>
+    <string name="alarm">습관 추가하기</string>
+    <string name="alarm_time">알림</string>
+    <string name="time_selection">시간 선택</string>
+
+
+    <string-array name="week">
+        <item>일</item>
+        <item>월</item>
+        <item>화</item>
+        <item>수</item>
+        <item>목</item>
+        <item>금</item>
+        <item>토</item>
+    </string-array>
+
+    <string name="sunday">일</string>
+
+
+
 </resources>
