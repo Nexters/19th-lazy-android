@@ -4,8 +4,8 @@
     <string name="habit_input_name">습관 설정</string>
     <string name="habit_input_name_hint">습관을 써주세요.</string>
     <string name="habit_input_week">요일 설정</string>
-    <string name="alarm">습관 추가하기</string>
-    <string name="alarm_time">알림</string>
+    <string name="alarm">알림</string>
+    <string name="alarm_time">알림시간</string>
     <string name="time_selection">시간 선택</string>
 
 
