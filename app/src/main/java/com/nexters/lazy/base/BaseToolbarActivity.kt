@@ -17,6 +17,7 @@ import kotlin.reflect.KClass
 
 
 abstract class BaseToolbarActivity<VB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
+
     protected abstract val layoutResId: Int
     protected abstract val viewModelClass: KClass<VM>
 
@@ -34,7 +35,6 @@ abstract class BaseToolbarActivity<VB : ViewDataBinding, VM : BaseViewModel> : A
 
         rootViewBinding = ActivityBaseToolbarBinding.inflate(layoutInflater)
         setContentView(rootViewBinding.root)
-
 
         binding = DataBindingUtil.inflate(
             LayoutInflater.from(this),

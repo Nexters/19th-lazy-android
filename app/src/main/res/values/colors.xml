@@ -26,4 +26,6 @@
     <color name="text_primary_30">#4D191f28</color>
     
     <color name="btn_disable">#cccccc</color>
+
+    <color name="color_main">#5848FF</color>
 </resources>
