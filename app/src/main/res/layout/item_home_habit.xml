@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        
+        <ImageView
+            android:id="@+id/iv_jelly"
+            android:layout_width="@dimen/jelly_size"
+            android:layout_height="@dimen/jelly_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_gravity="center_vertical"
+            android:background="@color/key">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_jelly"
+            android:layout_marginLeft="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="런데이"
+                android:textSize="@dimen/small"
+                android:fontFamily="@font/pretendard_semibold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="4dp">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4시간 남았어요"
+                android:textSize="@dimen/extra_small"
+                android:fontFamily="@font/pretendard_medium"
+                android:textColor="@color/text_caption">
+
+            </TextView>
+
+        </LinearLayout>
+        
+        <TextView
+            android:layout_width="54dp"
+            android:layout_height="34dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="3일 차"
+            android:textSize="@dimen/extra_small"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="center"
+            android:background="@drawable/bg_habit_check">
+
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
