@@ -17,9 +17,15 @@
     <color name="red_700">#d32f2f</color>
 
     <color name="key">#5044ff</color>
+
     <color name="text_primary">#191f28</color>
     <color name="text_secondary">#797e86</color>
     <color name="text_caption">#a1a7af</color>
     <color name="text_white">#ffffff</color>
+    <color name="text_primary_30">#4D191f28</color>
+
     <color name="btn_disable">#cccccc</color>
+
+    <color name="bg_bottom_sheet_indicator">#E4E4E4</color>
+    <color name="bg_home">#2c2b33</color>
 </resources>

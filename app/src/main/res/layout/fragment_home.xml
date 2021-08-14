@@ -10,22 +10,23 @@
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container_coordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/bg_home">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="match_parent"
             app:elevation="0dp">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ffbe00"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                android:minHeight="300dp">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -34,7 +35,9 @@
                     <com.igalata.bubblepicker.rendering.BubblePicker
                         android:id="@+id/picker"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        app:backgroundColor="@color/bg_home"
+                        >
 
                     </com.igalata.bubblepicker.rendering.BubblePicker>
 
@@ -44,17 +47,111 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_main"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/container_scroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_home_list"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingTop="5dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:listitem="@layout/item_home_habit" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_sheet"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/indicator_bottom_sheet"
+                    android:layout_width="@dimen/bottom_sheet_indicator_width"
+                    android:layout_height="@dimen/bottom_sheet_indicator_height"
+                    android:background="@drawable/bg_bottom_sheet_indicator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:elevation="@dimen/z_order">
+                </View>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/indicator_bottom_sheet"
+                    android:paddingTop="@dimen/padding_small"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_title_prefix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/normal"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:text="@string/home_title_prefix">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_title_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toRightOf="@id/tv_title_prefix"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/key"
+                        android:textSize="@dimen/normal"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:text="2">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_title_suffix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toRightOf="@id/tv_title_days"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/normal"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:text="@string/home_title_suffix">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/iv_add"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:src="@drawable/ic_btn_add">
+
+                    </ImageView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/container_title"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_home_habit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
 
 
 

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lazy</string>
+    
+    <!-- home -->
+    <string name="home_title_prefix">총 </string>
+    <string name="home_title_suffix">일 쌓였어요</string>
 </resources>

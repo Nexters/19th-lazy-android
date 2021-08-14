@@ -1,8 +1,7 @@
-package com.nexters.lazy.adapter
+package com.nexters.lazy.adapter.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nexters.lazy.R
 

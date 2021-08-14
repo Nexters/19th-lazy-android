@@ -1,4 +1,4 @@
-package com.nexters.lazy.ui
+package com.nexters.lazy.ui.home
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import com.igalata.bubblepicker.adapter.BubblePickerAdapter
 import com.igalata.bubblepicker.model.BubbleGradient
 import com.igalata.bubblepicker.model.PickerItem
 import com.nexters.lazy.R
-import com.nexters.lazy.adapter.HomeAdapter
+import com.nexters.lazy.adapter.home.HomeAdapter
 import com.nexters.lazy.base.BaseFragment
 import com.nexters.lazy.databinding.FragmentHomeBinding
 import com.nexters.presentation.viewmodel.HomeViewModel
@@ -20,9 +20,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initView()
         initRecyclerView()
         loadSample()
         picker()
+    }
+
+    private fun initView(){
+        binding.collapsingLayout.viewTreeObserver.addOnGlobalLayoutListener {
+            with(binding){
+                val coordinatorHeight = containerCoordinator.height
+                val scrollHeight = containerScroll.height
+                val rvHeight = rvMain.height
+                collapsingLayout.minimumHeight = coordinatorHeight - scrollHeight
+                appBarLayout.layoutParams.height = collapsingLayout.minimumHeight + rvHeight
+            }
+        }
+        binding.appBarLayout.setExpanded(false)
     }
 
     private fun initRecyclerView() {
@@ -35,6 +49,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         sampleAdapter.notifySample()
     }
 
+    // code to remove
     private fun picker(){
         binding.picker.adapter = object : BubblePickerAdapter {
             override val totalCount = 15

@@ -1,4 +1,4 @@
-package com.nexters.lazy.ui
+package com.nexters.lazy.ui.home
 
 import android.os.Bundle
 import com.nexters.lazy.R
