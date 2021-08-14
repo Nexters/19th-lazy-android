@@ -33,4 +33,5 @@
     <dimen name="bottom_sheet_indicator_height">4dp</dimen>
     <dimen name="jelly_size">34dp</dimen>
     <dimen name="check_btn_radius">500dp</dimen>
+
 </resources>
