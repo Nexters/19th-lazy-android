@@ -14,7 +14,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
 
     // Dagger hilt
-    implementation "com.google.dagger:hilt-android:$dagger_hilt_android_version"
+    implementation "com.google.dagger:hilt-core:2.38"
     kapt "com.google.dagger:hilt-android-compiler:$dagger_hilt_android_version"
 
     // retrofit
