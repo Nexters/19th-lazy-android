@@ -6,7 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.nexters.presentation.viewmodel.HomeViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -126,6 +128,7 @@
                     </TextView>
 
                     <ImageView
+                        android:onClick="@{()->viewModel.onClickAdd()}"
                         android:id="@+id/iv_add"
                         android:layout_width="@dimen/icon_small"
                         android:layout_height="@dimen/icon_small"
