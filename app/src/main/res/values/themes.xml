@@ -3,6 +3,7 @@
     <style name="Theme.Lazy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorAccent">@color/color_main</item>
         <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textSize">18dp</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="editTextStyle">@style/EditTextStyle</item>
     </style>

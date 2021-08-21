@@ -7,4 +7,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HabitFormViewModel @Inject constructor() : BaseViewModel() {
 
+    fun onClickHabitIcon(habitIconId:Int){
+
+    }
 }
