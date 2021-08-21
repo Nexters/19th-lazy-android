@@ -2,8 +2,6 @@ package com.nexters.lazy
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.igalata.bubblepicker.BubblePickerListener
 import com.igalata.bubblepicker.adapter.BubblePickerAdapter
 import com.igalata.bubblepicker.model.BubbleGradient
 import com.igalata.bubblepicker.model.PickerItem

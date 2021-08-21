@@ -8,6 +8,30 @@
     <dimen name="large">24sp</dimen>
     <dimen name="super_large">28sp</dimen>
     <dimen name="extra_large">52dp</dimen>
+
+
+    <dimen name="z_order">1dp</dimen>
+    <dimen name="line_width">1dp</dimen>
     
+    <dimen name="margin_small">10dp</dimen>
+
+    <dimen name="padding_small">16dp</dimen>
+    <dimen name="padding_medium">20dp</dimen>
+    
+    <dimen name="icon_small">24dp</dimen>
+
+    <dimen name="tab_size">60dp</dimen>
+
     <dimen name="btn_radius">30dp</dimen>
+
+
+    <!-- home -->
+    <!-- bottom sheet -->
+    <dimen name="bottom_sheet_radius">24dp</dimen>
+    <dimen name="bottom_sheet_indicator_radius">40dp</dimen>
+    <dimen name="bottom_sheet_indicator_width">54dp</dimen>
+    <dimen name="bottom_sheet_indicator_height">4dp</dimen>
+    <dimen name="jelly_size">34dp</dimen>
+    <dimen name="check_btn_radius">500dp</dimen>
+
 </resources>
