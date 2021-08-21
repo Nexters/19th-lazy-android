@@ -29,6 +29,7 @@
             android:src="@drawable/slice_2" />
 
         <TextView
+            android:fontFamily="@font/pretendard_semibold"
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

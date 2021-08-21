@@ -21,7 +21,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_gravity="center_vertical"
-            android:background="@color/key">
+            android:background="@color/color_main">
 
         </ImageView>
 
@@ -39,7 +39,7 @@
                 android:text="런데이"
                 android:textSize="@dimen/small"
                 android:fontFamily="@font/pretendard_semibold"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/gray_700"
                 android:layout_marginBottom="4dp">
             </TextView>
 
@@ -49,7 +49,7 @@
                 android:text="4시간 남았어요"
                 android:textSize="@dimen/extra_small"
                 android:fontFamily="@font/pretendard_medium"
-                android:textColor="@color/text_caption">
+                android:textColor="@color/gray_600">
 
             </TextView>
 
@@ -63,7 +63,7 @@
             app:layout_constraintRight_toRightOf="parent"
             android:text="3일 차"
             android:textSize="@dimen/extra_small"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/gray_700"
             android:fontFamily="@font/pretendard_bold"
             android:gravity="center"
             android:background="@drawable/bg_habit_check">

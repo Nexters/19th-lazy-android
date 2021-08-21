@@ -14,7 +14,7 @@
     </string-array>
 
     <integer-array name="colors">
-        <item>@color/teal_200</item>
+        <item>@color/color_main</item>
     </integer-array>
 
 </resources>

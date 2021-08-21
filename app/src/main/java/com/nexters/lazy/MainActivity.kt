@@ -26,23 +26,23 @@ class MainActivity : AppCompatActivity() {
                     gradient = when(position%3){
                         0->
                             BubbleGradient(
-                                getColor(R.color.teal_200),
-                                getColor(R.color.teal_200), BubbleGradient.VERTICAL
+                                getColor(R.color.color_main),
+                                getColor(R.color.color_main), BubbleGradient.VERTICAL
                             )
                         1->
                             BubbleGradient(
-                                getColor(R.color.purple_200),
-                                getColor(R.color.purple_500), BubbleGradient.VERTICAL
+                                getColor(R.color.color_main),
+                                getColor(R.color.color_main), BubbleGradient.VERTICAL
                             )
                         2->
                             BubbleGradient(
-                                getColor(R.color.red_200),
-                                getColor(R.color.red_500), BubbleGradient.VERTICAL
+                                getColor(R.color.color_main),
+                                getColor(R.color.color_main), BubbleGradient.VERTICAL
                             )
                         else->
                             BubbleGradient(
-                                getColor(R.color.blue_200),
-                                getColor(R.color.blue_500), BubbleGradient.VERTICAL
+                                getColor(R.color.color_main),
+                                getColor(R.color.color_main), BubbleGradient.VERTICAL
                             )
                     }
                 }
@@ -59,23 +59,23 @@ class MainActivity : AppCompatActivity() {
                         gradient = when(position%2){
                             0->
                                 BubbleGradient(
-                                    getColor(R.color.teal_200),
-                                    getColor(R.color.teal_200), BubbleGradient.VERTICAL
+                                    getColor(R.color.color_main),
+                                    getColor(R.color.color_main), BubbleGradient.VERTICAL
                                 )
                             1->
                                 BubbleGradient(
-                                    getColor(R.color.purple_200),
-                                    getColor(R.color.purple_500), BubbleGradient.VERTICAL
+                                    getColor(R.color.color_main),
+                                    getColor(R.color.color_main), BubbleGradient.VERTICAL
                                 )
                             2->
                                 BubbleGradient(
-                                    getColor(R.color.red_200),
-                                    getColor(R.color.red_500), BubbleGradient.VERTICAL
+                                    getColor(R.color.color_main),
+                                    getColor(R.color.color_main), BubbleGradient.VERTICAL
                                 )
                             else->
                                 BubbleGradient(
-                                    getColor(R.color.blue_200),
-                                    getColor(R.color.blue_500), BubbleGradient.VERTICAL
+                                    getColor(R.color.color_main),
+                                    getColor(R.color.color_main), BubbleGradient.VERTICAL
                                 )
                         }
                     }
