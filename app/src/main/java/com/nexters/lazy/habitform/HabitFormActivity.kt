@@ -8,6 +8,7 @@ import com.nexters.lazy.R
 import com.nexters.lazy.base.BaseToolbarActivity
 import com.nexters.lazy.base.NavType
 import com.nexters.lazy.databinding.ActivityHabitDetailBinding
+import com.nexters.presentation.viewmodel.HabitFormViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.reflect.KClass
 
