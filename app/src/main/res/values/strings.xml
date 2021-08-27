@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lazy</string>
+    <string name="app_name">밍굴맹굴</string>
 
     <string name="habit_adding">습관 추가하기</string>
     <string name="habit_input_name">습관 설정</string>
