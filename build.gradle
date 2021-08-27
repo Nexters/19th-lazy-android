@@ -34,6 +34,9 @@ allprojects {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+
+        // kakao sdk repository
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
 }
 
