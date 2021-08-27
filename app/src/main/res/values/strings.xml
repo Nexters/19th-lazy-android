@@ -25,5 +25,16 @@
     <!-- home -->
     <string name="home_title_prefix">총 </string>
     <string name="home_title_suffix">일 쌓였어요</string>
+    
+    <!-- on-boarding -->
+    <string name="btn_next">다음</string>
+    <string name="btn_start">바로 시작!</string>
+
+    <string name="main1">게으름뱅이에서\n탈출하고 싶다면\n잘오셨습니다</string>
+    <string name="sub1">밍굴맹굴은 당신의 고민을\n바로 해결해줄 해결사!</string>
+    <string name="main2">습관미루기를\n조금씩 줄여볼까요?</string>
+    <string name="sub2">당장 줄일 수 있는 목표를 만들고\n미루지 않도록 노력해보세요</string>
+    <string name="main3">미룬 일수를 알려주는\n습관형성 서비스</string>
+    <string name="sub3">달성하지 않고 넘어가 버린\n습관을 알려줄게요!</string>
 
 </resources>

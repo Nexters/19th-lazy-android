@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- font size -->
-    <dimen name="extra_small">12sp</dimen>
-    <dimen name="super_small">14sp</dimen>
-    <dimen name="small">16sp</dimen>
-    <dimen name="normal">18sp</dimen>
-    <dimen name="large">24sp</dimen>
-    <dimen name="super_large">28sp</dimen>
-    <dimen name="extra_large">52dp</dimen>
+    <dimen name="xxs">10sp</dimen>
+    <dimen name="xs">12sp</dimen>
+    <dimen name="s">14sp</dimen>
+    <dimen name="r">16sp</dimen>
+    <dimen name="m">18sp</dimen>
+    <dimen name="l">20sp</dimen>
+    <dimen name="xl">24sp</dimen>
+    <dimen name="xxl">28sp</dimen>
+    <dimen name="xxxl">52sp</dimen>
 
 
     <dimen name="z_order">1dp</dimen>
@@ -23,6 +25,7 @@
     <dimen name="tab_size">60dp</dimen>
 
     <dimen name="btn_radius">30dp</dimen>
+    <dimen name="btn1_height">60dp</dimen>
 
 
     <!-- home -->

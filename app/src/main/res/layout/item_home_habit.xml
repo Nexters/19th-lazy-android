@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="런데이"
-                android:textSize="@dimen/small"
+                android:textSize="@dimen/r"
                 android:fontFamily="@font/pretendard_semibold"
                 android:textColor="@color/gray_700"
                 android:layout_marginBottom="4dp">
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4시간 남았어요"
-                android:textSize="@dimen/extra_small"
+                android:textSize="@dimen/xs"
                 android:fontFamily="@font/pretendard_medium"
                 android:textColor="@color/gray_600">
 
@@ -62,7 +62,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:text="3일 차"
-            android:textSize="@dimen/extra_small"
+            android:textSize="@dimen/xs"
             android:textColor="@color/gray_700"
             android:fontFamily="@font/pretendard_bold"
             android:gravity="center"
