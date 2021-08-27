@@ -16,9 +16,9 @@
         android:theme="@style/Theme.Lazy">
         <activity android:name=".habitform.HabitFormActivity"/>
         <activity android:name=".ui.onaording.FirstOnBoardingActivity" />
-        <activity android:name=".ui.SplashActivity" />
         <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.home.HomeActivity">
+        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

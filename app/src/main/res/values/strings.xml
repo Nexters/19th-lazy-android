@@ -37,4 +37,8 @@
     <string name="main3">미룬 일수를 알려주는\n습관형성 서비스</string>
     <string name="sub3">달성하지 않고 넘어가 버린\n습관을 알려줄게요!</string>
 
+    <string name="login_main">더 이상의 게으름은\n용납할 수 없다. </string>
+    <string name="login_sub">여태 안했지만 오늘은 할 수 있도록\n도와주는 밍굴맹굴!</string>
+    <string name="login_kakao">카카오톡으로 로그인</string>
+
 </resources>

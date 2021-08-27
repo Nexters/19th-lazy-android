@@ -1,8 +1,6 @@
 package com.nexters.lazy.ui.home
 
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import com.nexters.lazy.R
 import com.nexters.lazy.base.BaseActivity
 import com.nexters.lazy.databinding.ActivityHomeBinding
@@ -18,7 +16,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, MainViewModel>(){
         super.onCreate(savedInstanceState)
         initView()
         initListener()
-        Log.e("sdk version ", Build.VERSION.SDK_INT.toString())
     }
 
     fun initView(){

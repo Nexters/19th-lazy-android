@@ -1,5 +1,6 @@
 package com.nexters.lazy.ui.onaording
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -7,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.nexters.lazy.R
 import com.nexters.lazy.base.BaseActivity
 import com.nexters.lazy.databinding.ActivityOnboarding1Binding
+import com.nexters.lazy.ui.LoginActivity
 import com.nexters.presentation.model.OnBoardingData
 import com.nexters.presentation.viewmodel.NoViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,8 +32,8 @@ class FirstOnBoardingActivity : BaseActivity<ActivityOnboarding1Binding, NoViewM
         with(binding){
             btnNext.setOnClickListener {
                 if(viewpager.currentItem == PAGE_NUM-1){
-                    // TODO start activity
                     // TODO set shared Preference
+                    startActivity(Intent(this@FirstOnBoardingActivity, LoginActivity::class.java))
                 }
                 viewpager.currentItem++
             }
