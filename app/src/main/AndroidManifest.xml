@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lazy">
         <activity android:name=".ui.LoginActivity">
+        <activity android:name=".ui.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,6 @@
                     android:scheme="@string/kakao_api_scheme" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

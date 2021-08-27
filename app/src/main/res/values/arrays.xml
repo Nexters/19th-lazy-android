@@ -2,31 +2,18 @@
 <resources>
     <string-array name="countries">
         <item>Argentina</item>
-        <item>Bolivia</item>
-        <item>Brazil</item>
-        <item>Chile</item>
-        <item>Costa Rica</item>
-        <item>Dominican Republic</item>
-        <item>Mexico</item>
-        <item>Nicaragua</item>
-        <item>Peru</item>
-        <item>Venezuela</item>
-        <item>Cuba</item>
-        <item>Ecuador</item>
-        <item>El Salvador</item>
-        <item>Haiti</item>
-        <item>Panama</item>
-        <item>Paraguay</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+        <item>Argentina</item>
+
     </string-array>
 
     <integer-array name="colors">
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_200</item>
         <item>@color/teal_200</item>
     </integer-array>
 
