@@ -40,5 +40,8 @@
     <string name="login_main">더 이상의 게으름은\n용납할 수 없다. </string>
     <string name="login_sub">여태 안했지만 오늘은 할 수 있도록\n도와주는 밍굴맹굴!</string>
     <string name="login_kakao">카카오톡으로 로그인</string>
-
+    
+    <string name="nickname_title">뭐라고 부르면 될까요?</string>
+    <string name="nickname_hint">닉네임을 입력하세요</string>
+    <string name="nickname_btn">확인</string>
 </resources>

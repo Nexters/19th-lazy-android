@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.nexters.lazy.R
 import com.nexters.lazy.base.BaseActivity
 import com.nexters.lazy.databinding.ActivityLoginBinding
-import com.nexters.lazy.ui.home.HomeActivity
 import com.nexters.lazy.util.KakaoLoginManager
 import com.nexters.presentation.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +23,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(){
         binding.apply {
             btnLoginGroup.setOnClickListener {
                 KakaoLoginManager(this@LoginActivity).requestLogin()
-                startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                startActivity(Intent(this@LoginActivity, JoinActivity::class.java))
                 finish()
             }
         }

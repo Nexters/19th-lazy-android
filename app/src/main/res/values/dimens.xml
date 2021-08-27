@@ -27,6 +27,9 @@
     <dimen name="btn_radius">30dp</dimen>
     <dimen name="btn1_height">60dp</dimen>
 
+    <dimen name="input_height">60dp</dimen>
+    <dimen name="input_radius">12dp</dimen>
+
 
     <!-- home -->
     <!-- bottom sheet -->
