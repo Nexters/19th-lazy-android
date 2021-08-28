@@ -18,6 +18,7 @@
         <activity android:name=".ui.onaording.FirstOnBoardingActivity" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.onaording.SecondOnBoardingActivity" />
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

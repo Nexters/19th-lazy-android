@@ -40,4 +40,8 @@
     <dimen name="jelly_size">34dp</dimen>
     <dimen name="check_btn_radius">500dp</dimen>
 
+    <!-- onboarding -->
+    <dimen name="indicator_padding">8dp</dimen>
+    <dimen name="indicator_size">12dp</dimen>
+
 </resources>

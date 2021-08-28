@@ -34,6 +34,7 @@ class FirstOnBoardingActivity : BaseActivity<ActivityOnboarding1Binding, NoViewM
                 if(viewpager.currentItem == PAGE_NUM-1){
                     // TODO set shared Preference
                     startActivity(Intent(this@FirstOnBoardingActivity, LoginActivity::class.java))
+                    finish()
                 }
                 viewpager.currentItem++
             }
